@@ -720,10 +720,6 @@ class coffeegrindsize_GUI:
         subMenu.add_command(label="Turn Expert Mode On/Off...", command=self.toggle_expert_mode)
         subMenu.add_separator()
 
-        # Add an option for debugging
-        subMenu.add_command(label="Python Debugger...", command=self.pdb_call)
-        subMenu.add_separator()
-
         # Add an option to quit
         subMenu.add_command(label="Quit", command=self.quit_gui)
 
@@ -1713,10 +1709,6 @@ class coffeegrindsize_GUI:
             self.simple_frame_options.tkraise()
             self.expert_mode = False
             return
-
-    # Method to trigger the Python debugger
-    def pdb_call(self):
-        pdb.set_trace()
 
     # Method to reset zoom
     def reset_zoom(self):
@@ -3294,5 +3286,3 @@ while True:
         break
     except UnicodeDecodeError:
         pass
-# except:
-#	pdb.set_trace()
