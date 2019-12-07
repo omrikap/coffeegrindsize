@@ -1,31 +1,21 @@
-# Import the required packages
 from tkinter import filedialog
 from tkinter import *
-from PIL import ImageTk, Image
-import time
-import numpy as np
-import webbrowser
-import pandas as pd
 import os
 import sys
+import time
+import webbrowser
 
+from matplotlib import path, rc
+from PIL import ImageTk, Image
 import matplotlib
-
-matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import matplotlib.ticker as mticker
-from matplotlib import path
+import numpy as np
+import pandas as pd
 
 # Set thick axes
-from matplotlib import rc
-
+matplotlib.use('TkAgg')
 rc("axes", linewidth=2)
-
-# Temporary for debugging purposes
-import pdb
-
-stop = pdb.set_trace
 
 # === Default Parameters for analysis and plotting ===
 
@@ -2251,8 +2241,8 @@ class coffeegrindsize_GUI:
 
                     # Make a list of all current pixels that are almost as dark as the reference pixel
                     idark_in_list = np.where(imdata_mask[iclust[iclust_filtered]] <= (
-                                (self.background_median - imdata_mask[icurrent]) * reference_threshold + imdata_mask[
-                            icurrent]))
+                            (self.background_median - imdata_mask[icurrent]) * reference_threshold + imdata_mask[
+                        icurrent]))
                     idark = iclust[iclust_filtered[idark_in_list[0]]]
 
                     # There should be at least one dark pixel
